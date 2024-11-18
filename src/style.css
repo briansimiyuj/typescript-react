@@ -75,6 +75,32 @@ button{
   flex-wrap: wrap;
 }
 
+.todos-single{
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+  background-color: yellow;
+
+  .todos-single-text{
+    flex: 1;
+    padding: 5px;
+    border: none;
+    font-size: 20px;
+  }
+
+  .icons{
+    display: flex;
+  }
+
+  .icon{
+    margin-left: 10px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+}
+
 @media(max-width: 800px){
 
   .heading{
@@ -82,4 +108,24 @@ button{
     font-size: 35px;
   }
   
+}
+
+@media(max-width: 700px){
+
+  .input, .todos{
+    width: 95%;
+  }
+
+  .todos-single{
+    width: 100%;
+  }
+
+}
+
+@media(max-width: 1200px){
+
+  .todos-single{
+    width: 40%;
+  }
+
 }
