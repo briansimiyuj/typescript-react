@@ -1,1 +1,1 @@
-To learn the basics of TypeScript, you can refer to https://github.com/briansimiyuj/TypeScript-Tutorial repository.
+In functional compoonents, we need to specify the type of compoonents we are using. So just immediately after the function name, we add the type of component we are using. For example, in src/Script.tsx we have specified that we are using a functional component.
