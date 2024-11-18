@@ -1,6 +1,7 @@
 import { AiFillDelete, AiFillEdit } from "react-icons/ai"
 import { Todo } from "../../model"
 import { MdDone } from "react-icons/md"
+import { useState } from "react"
 
 interface Props{
     todo: Todo
@@ -9,6 +10,9 @@ interface Props{
 }
 
 const TodoCard: React.FC<Props> = ({ todo, todos, setTodos }) =>{
+
+    const [isEdit, setIsEdit] = useState<boolean>(false),
+          [editTodo, setEditTodo] = useState<string>(todo.todo)
 
     const handleDone = (id: number) =>{
     
@@ -22,28 +26,58 @@ const TodoCard: React.FC<Props> = ({ todo, todos, setTodos }) =>{
 
     }
 
+    const handleEdit = (e: React.FormEvent, id: number) =>{
+        
+        e.preventDefault()
+
+        setTodos(todos.map(todo => todo.id === id ? {...todo, todo: editTodo} : todo))
+
+        setIsEdit(false)
+
+    }
+
     return(
 
-        <form className="todos-single">
+        <form className="todos-single" onSubmit={e => handleEdit(e, todo.id)}>
 
             {
 
-                todo.isDone ?(
+                isEdit ?(
 
-                    <s className="todos-single-text">{todo.todo}</s>
+                    <input 
+                        type="text" 
+                        value={editTodo} 
+                        onChange={e => setEditTodo(e.target.value)} 
+                        className="edit-input"
+                    />
 
-                ):(
+                ) : (
 
-                    <span className="todos-single-text">{todo.todo}</span>
+                    todo.isDone ?(
 
+                        <s className="todos-single-text">{todo.todo}</s>
+    
+                    ):(
+    
+                        <span className="todos-single-text">{todo.todo}</span>
+    
+                    )
                 )
+
 
             }
 
 
             <div className="icons">
 
-                <span className="icon">
+                <span 
+                    className="icon"
+                    onClick={() =>{
+                        if(!isEdit && !todo.isDone){
+                            setIsEdit(!isEdit)
+                        }
+                    }}
+                >
 
                     <AiFillEdit/>
 
