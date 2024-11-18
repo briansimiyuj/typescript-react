@@ -7,13 +7,20 @@ const Script:React.FC = () =>{
   const [todo, setTodo] = useState<string>(''),
         [todos, setTodos] = useState<Todo[]>([])
 
+
+  const addTodo = (e: React.FormEvent)=>{
+  
+    e.preventDefault() 
+  
+  }
+
   return(
 
     <div className="container">
 
       <span className="heading">Taskify</span>
 
-      <InputField todo={todo} setTodo={setTodo}/>
+      <InputField todo={todo} setTodo={setTodo} addTodo={addTodo}/> 
 
     </div>
 
