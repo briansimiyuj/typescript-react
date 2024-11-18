@@ -17,9 +17,6 @@ const Script:React.FC = () =>{
       setTodos([...todos, {id: Date.now(), todo, isDone: false}])
       
       setTodo('')
-
-      console.log(todos)
-
     }
   
   }

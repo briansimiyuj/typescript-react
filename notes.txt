@@ -1,7 +1,0 @@
-When initializing state, we need to infer the type of the state from the type of the value (src/Script.tsx:6).
-We can also have union types, which can be useful for example when we want to have a state that can be either a string or a number.
-
-When we want to accept props from the parent component, we need to define the type of the props in the child component. We can create an interface for the props and then use it in the child component.
-When accepting a setter function as a prop, the  type of the setter function is React.Dispatch<React.SetStateAction<T>>. Which is a type that allows you to dispatch a state change to a component
-
-If we want to accept a prop that is a function, we need to define the type of the function in the child component and the return value type 
