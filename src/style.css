@@ -68,6 +68,13 @@ button{
   }
 }
 
+.todos{
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  flex-wrap: wrap;
+}
+
 @media(max-width: 800px){
 
   .heading{
