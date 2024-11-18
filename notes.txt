@@ -1,1 +1,2 @@
-In functional compoonents, we need to specify the type of compoonents we are using. So just immediately after the function name, we add the type of component we are using. For example, in src/Script.tsx we have specified that we are using a functional component.
+When initializing state, we need to infer the type of the state from the type of the value (src/Script.tsx:6).
+We can also have union types, which can be useful for example when we want to have a state that can be either a string or a number.
