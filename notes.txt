@@ -1,3 +1,5 @@
 Setting up a React project with TypeScript is quite simple.
 
 First of all, there is no need to compile TypeScript to JavaScript. Vite automatically compiles TypeScript to JavaScript. This will reduce duplication of files.
+
+To configure TypeScript, you can create a `tsconfig.json` file in the root of your project. This file will contain all the settings for TypeScript.
